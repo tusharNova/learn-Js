@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+    <div>
+        <strong>Add Padding</strong>
+        <button onclick="addPadding()">Add</button>&nbsp;<button onclick="removePadding()">Remove</button>
+    </div><br>
+    <div>
+        <strong>Change Font size</strong>
+        <select name="" id="getfont" onchange="changefont()">
+            <option value="smaller">smaller</option>
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+            <option value="larger">larger</option>
+            <option value="x-large">x-large</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <strong>Text-align</strong>
+        <button onclick="changeTextAlgin('justify')">
+            <i title="text-align-justify" class="fa fa-align-justify" aria-hidden="true">
+            </i>
+        </button>&nbsp;
+        <button onclick="changeTextAlgin('left')">
+            <i title="text-align-left" class="fa fa-align-left" aria-hidden="true"></i>
+        </button>&nbsp;
+        <button onclick="changeTextAlgin('center')">
+            <i title="text-align-center" class="fa fa-align-center" aria-hidden="true"></i>
+        </button>&nbsp;
+        <button onclick="changeTextAlgin('right')">
+            <i title="text-align-right" class="fa fa-align-right" aria-hidden="true"></i>
+        </button>&nbsp;
+       
+
+    </div>
+    <br>
+
+    <div style="padding: 0px;  border:2px solid; font-size: 20px;text-align: justify;" id="maindiv">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, numquam! Necessitatibus alias impedit facilis
+        esse asperiores ullam mollitia ratione molestiae repellendus? Accusantium, quod officiis nemo, omnis sint rem,
+        libero itaque nulla odio rerum commodi deleniti! Porro adipisci, suscipit minus facilis vero nulla. Accusantium
+        commodi repudiandae, nisi consequatur sunt totam laborum similique voluptates quas rem tenetur debitis quos
+        maxime distinctio numquam assumenda impedit voluptas necessitatibus beatae recusandae dolorem. Quas consequuntur
+        debitis consectetur atque facere nemo id explicabo labore, at optio perferendis perspiciatis culpa sit
+        consequatur voluptas officiis modi pariatur provident officia, impedit tempora dolor? Fugiat incidunt, corporis
+        maxime eius laboriosam eveniet.
+
+    </div>
+    <script>
+        var maindiv = document.getElementById('maindiv');
+        p = maindiv.style.padding;
+        p = parseInt(p);
+        function addPadding() {
+            p += 2;
+            maindiv.style.padding = p + "px";
+        }
+        function removePadding() {
+            p -= 2;
+            maindiv.style.padding = p + "px";
+        }
+        /////for change in font
+
+        function changefont() {
+            var optval = document.getElementById('getfont').value;
+            maindiv.style.fontSize = optval;
+        }
+        //// for change in text-algins
+
+        function changeTextAlgin(position){
+            maindiv.style.textAlign = position;
+        }
+
+    </script>
+</body>
+
+</html>
